@@ -1,13 +1,276 @@
-body {
+* {
+  box-sizing: border-box;
+  font-family: "Poppins";
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+  text-decoration: none;
+}
+
+button {
+  border: 0;
+  background: transparent;
+  color: #000000;
+  cursor: pointer;
+}
+
+/* navbar */
+
+.navbar {
+  position: relative;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 64px;
+  background: transparent;
+  color: #000000;
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 600px) {
+  .navbar {
+    justify-content: space-between;
+    padding: 0 0 0 16px;
+  }
+}
+
+.navbar-responsive {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  color: #000000;
+}
+
+@media only screen and (min-width: 600px) {
+  .navbar-responsive {
+    display: none;
+  }
+}
+
+.navbar-tittle {
+  margin: 0;
+  font-size: 35px;
+  font-weight: bolder;
+}
+
+.navbar-menu {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  translate: -100% 0;
+  width: 200px;
+  height: 100%;
+  padding: 20px;
+  gap: 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #000000;
+  visibility: hidden;
+  transition: translate 0.3s;
+}
+
+.navbar-menu button {
+  font-size: 16px;
+  margin: 0 10px 0 10px;
+}
+
+.navbar-menu .active {
+  color: #000000;
+  font-weight: bolder;
+}
+
+body.open .navbar-menu {
+  translate: 0 0;
+  visibility: visible;
+}
+
+@media only screen and (min-width: 600px) {
+  .navbar-menu {
+    position: static;
+    translate: 0 0;
+    width: auto;
+    background: transparent;
+    flex-direction: row;
+    visibility: visible;
+  }
+}
+
+.navbar-menu > a > button {
+  color: #000000;
+}
+
+.navbar-menu > button.active {
+  color: inherit;
+}
+
+/*header*/
+
+.container-header {
+  padding-top: 10px;
+}
+
+.container-header .left {
+  float: left;
+  width: 55%;
+  height: 500px;
+  padding-top: 50px;
+}
+
+.container-header .left #judul {
+  font-size: 64px;
+  margin-left: 80px;
+}
+
+.container-header .left #isi {
+  font-size: 16px;
+  margin: 50px 0 0 140px;
+  color: #787878;
+  width: 640px;
+  height: 49px;
+}
+
+.container-header .right {
+  float: right;
+  width: 45%;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+.right img {
+  width: 280px;
+  background: linear-gradient(
+    214.59deg,
+    rgba(168, 83, 248, 0.904) -2.54%,
+    rgba(78, 192, 245, 0.267) 104.77%
+  );
+  backdrop-filter: blur(25px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  border-radius: 40px;
+  margin: 50px 0 0 100px;
+}
+
+.right #design {
+  position: absolute;
+  left: 845px;
+  height: 430px;
+}
+
+@media screen and (max-width: 600px) {
+  .container-header .left #judul {
+    font-size: 45px;
+    margin-left: 20px;
+  }
+
+  .container-header .left #isi {
+    font-size: 14px;
+    margin: 20px 0 0 27px;
+    color: #787878;
+    width: 350px;
+    height: 49px;
+    text-align: justify;
+  }
+
+  .right img {
+    width: 0px;
+    background: purple;
+    backdrop-filter: blur(25px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 40px;
+    margin: 50px 0 0 100px;
+  }
+}
+
+/* blur desain */
+
+.blurr {
+  position: absolute;
+  width: 433px;
+  height: 405px;
+  left: 1091px;
+  top: -9px;
+  background: rgba(171, 129, 222, 0.35);
+  filter: blur(150px);
+}
+
+/* blur desain */
+
+/* community-links */
+.community-links {
+  padding-top: 600px;
+  padding-bottom: 200px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1 15px;
+}
+
+.community-links h1 {
+  font-size: 32px;
+  font-weight: bolder;
+  color: #ffffff;
+}
+
+.card a img {
+  width: 40px;
+  margin: 20px 0px 0 15px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.wrapper .card {
+  max-width: 300px;
+  background: #ffffff;
+  padding: 0px;
+  border-radius: 10px;
+  margin: 40px;
+  box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.25);
+}
+
+.wrapper .card img {
+  float: left;
+  background: rgb(253, 253, 253);
+  border-radius: 10px 0px 0px 10px;
+  margin-right: 10px;
+}
+
+.wrapper .card article {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  color: #787878;
+  padding: 11px;
+}
+
+.wrapper .card #judul {
+  font-weight: bolder;
+  color: #000000;
+}
+
+@media screen and (max-width: 600px) {
+  .container-feature {
+    margin-top: 50px;
+    padding-top: 500px;
+  }
+  .wrapper .card img {
+    margin-right: 5px;
+  }
 }
