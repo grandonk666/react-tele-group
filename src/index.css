@@ -9,6 +9,12 @@ a {
   text-decoration: none;
 }
 
+/* body {
+  background-image: url("/img/background-homepage.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+} */
+
 button {
   border: 0;
   background: transparent;
